@@ -27,9 +27,43 @@ test("Is false",()=>{
 let reverseStr = (str, callBack)=>{
    callBack(str.split("").reverse().join(""))
 }
-test("reverse string work",()=>{
+test("reverse string",()=>{
   reverseStr('Jorge', (str)=>{
     expect(str).toBe("egroJ")
   })
 })
+// =========== Promise
+const reverseStr1 = (str)=>{
+  return new Promise((resolve, reject)=>{
+    if(!str){
+      reject(Error("Error"))
+    }
+    resolve(str.split("").reverse().join(""))
+  });
+};
+
+test("reverse str by Promise",()=>{
+  return reverseStr1("ana")
+    .then((str)=>{
+      expect(str).toBe("ana")
+    });
+});
+// =========== Async & Await
+test("Reverse str by Async & Await", async ()=>{
+  const string = await reverseStr1("ana");  
+  expect(string).toBe("ana")
+})
+// =========== Functions runs after of before to run test
+// After: This Function let me run test with functions ran before the test 
+afterEach(()=> console.log("After each test"));
+afterAll(()=> console.log("After all test"));
+
+// Before: 
+beforeEach(()=> console.log("Before each test"));
+beforeAll(()=> console.log("Before all test"));
+
+
+/*
+Watch y Coverage ===============================================================>
+*/
 
