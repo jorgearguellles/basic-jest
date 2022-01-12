@@ -55,12 +55,12 @@ test("Reverse str by Async & Await", async ()=>{
 })
 // =========== Functions runs after of before to run test
 // After: This Function let me run test with functions ran before the test 
-afterEach(()=> console.log("After each test"));
-afterAll(()=> console.log("After all test"));
+// afterEach(()=> console.log("After each test"));
+// afterAll(()=> console.log("After all test"));
 
 // Before: 
-beforeEach(()=> console.log("Before each test"));
-beforeAll(()=> console.log("Before all test"));
+// beforeEach(()=> console.log("Before each test"));
+// beforeAll(()=> console.log("Before all test"));
 
 
 /*
